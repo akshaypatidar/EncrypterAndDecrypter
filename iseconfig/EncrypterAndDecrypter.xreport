@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2018-02-06T15:12:35</DateModified>
-  <ModuleName>Controller_Top_Module</ModuleName>
+  <DateModified>2018-02-06T15:42:12</DateModified>
+  <ModuleName>EncrypterAndDecrypter</ModuleName>
   <SummaryTimeStamp>2018-02-06T15:12:03</SummaryTimeStamp>
-  <SavedFilePath>/home/akshay/Xilinix/Lab3_Mysterious/iseconfig/EncrypterAndDecrypter.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/akshay/Xilinix/Lab3_Mysterious/</ImplementationReportsDirectory>
+  <SavedFilePath>/home/bhavesh/Desktop/EncrypterAndDecrypter/iseconfig/EncrypterAndDecrypter.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/bhavesh/Desktop/EncrypterAndDecrypter/</ImplementationReportsDirectory>
   <DateInitialized>2018-02-06T15:12:35</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
@@ -17,6 +17,10 @@
     <toc-item title="Performance Summary" target="Performance Summary" />
     <toc-item title="Failing Constraints" target="Failing Constraints" />
     <toc-item title="Detailed Reports" target="Detailed Reports" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DeviceUtilizationSummary" tableState="CollapsedTable" />
+    <table-item tableKey="DetailedReports" tableState="CollapsedTable" />
+    <table-item tableKey="DetailedReports" tableState="CollapsedTable" />
    </view>
    <view inputState="Unknown" program="implementation" contextTags="FPGA_ONLY" hidden="true" type="HTML" file="Controller_Top_Module_envsettings.html" label="System Settings" />
    <view inputState="Translated" program="map" locator="MAP_IOB_TABLE" contextTags="FPGA_ONLY" type="IOBProperties" file="Controller_Top_Module_map.xrpt" label="IOB Properties" />

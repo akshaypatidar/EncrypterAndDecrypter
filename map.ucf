@@ -1,0 +1,37 @@
+# global / system GCLK for Atlys rev C board
+NET "clk" LOC = "L15" | IOSTANDARD = "LVCMOS33";
+NET "clk" TNM_NET = "clk_pin";
+TIMESPEC "TS_clk_pin" = PERIOD "clk_pin" 100000 kHz;
+
+#NET "reset" LOC = "T15" | IOSTANDARD = "LVCMOS33";
+#NET "reset" CLOCK_DEDICATED_ROUTE = FALSE;
+	
+# onBoard Leds
+ NET "data_out_leds<0>" LOC = "U18"; # Bank = 1, Pin name = IO_L52N_M1DQ15, 	   Sch name = LD0
+ NET "data_out_leds<1>" LOC = "M14"; # Bank = 1, Pin name = IO_L53P, 		 	   Sch name = LD1
+ NET "data_out_leds<2>" LOC = "N14"; # Bank = 1, Pin name = IO_L53N_VREF, 	   Sch name = LD2
+ NET "data_out_leds<3>" LOC = "L14"; # Bank = 1, Pin name = IO_L61P, 		 	   Sch name = LD3
+ NET "data_out_leds<4>" LOC = "M13"; # Bank = 1, Pin name = IO_L61N, 		 	   Sch name = LD4
+ NET "data_out_leds<5>" LOC = "D4";  # Bank = 0, Pin name = IO_L1P_HSWAPEN_0,	   Sch name = HSWAP/LD5
+ NET "data_out_leds<6>" LOC = "P16"; # Bank = 1, Pin name = IO_L74N_DOUT_BUSY_1, Sch name = LD6
+ NET "data_out_leds<7>" LOC = "N12"; # Bank = 2, Pin name = IO_L13P_M1_2,		   Sch name = M1/LD7
+ 
+# up push button for start_encrypt 
+NET "reset" LOC = "F5";  # Bank = 3, Pin name = IO_L55N_M3A14, 	   Sch name = BTNC
+NET "start_encrypt_button" LOC = "N4";  # Bank = 3, Pin name = IO_L1P, 	   		   Sch name = BTNU 
+# left push button for next_data_in
+ NET "next_data_in_button" LOC = "P4";  # Bank = 3, Pin name = IO_L2P, 	   		   Sch name = BTNL 
+# down push button for start_decrypt  
+ NET "start_decrypt_button" LOC = "P3";  # Bank = 3, Pin name = IO_L2N, 	   		   Sch name = BTND 
+# right push button for next_data_out
+ NET "next_data_out_button" LOC = "F6";  # Bank = 3, Pin name = IO_L55P_M3A13, 	   Sch name = BTNR
+  
+# onBoard SWITCHES
+ NET "data_in_sliders<0>" LOC = "A10"; # Bank = 0, Pin name = IO_L37N_GCLK12,      	Sch name = SW0
+ NET "data_in_sliders<1>" LOC = "D14"; # Bank = 0, Pin name = IO_L65P_SCP3,      	Sch name = SW1
+ NET "data_in_sliders<2>" LOC = "C14"; # Bank = 0, Pin name = IO_L65N_SCP2,      	Sch name = SW2
+ NET "data_in_sliders<3>" LOC = "P15"; # Bank = 1, Pin name = IO_L74P_AWAKE_1,       Sch name = SW3
+ NET "data_in_sliders<4>" LOC = "P12"; # Bank = 2, Pin name = IO_L13N_D10,      		Sch name = SW4
+ NET "data_in_sliders<5>" LOC = "R5";  # Bank = 2, Pin name = IO_L48P_D7,      		Sch name = SW5
+ NET "data_in_sliders<6>" LOC = "T5";  # Bank = 2, Pin name = IO_L48N_RDWR_B_VREF_2, Sch name = SW6
+ NET "data_in_sliders<7>" LOC = "E4";  # Bank = 3, Pin name = IO_L54P_M3RESET,       Sch name = SW7
