@@ -1,0 +1,8 @@
+xst -intstyle ise -ifn "/home/akshay/Xilinix/Lab3_Mysterious/Controller_Top_Module.xst" -ofn "/home/akshay/Xilinix/Lab3_Mysterious/Controller_Top_Module.syr" 
+xst -intstyle ise -ifn "/home/akshay/Xilinix/Lab3_Mysterious/Controller_Top_Module.xst" -ofn "/home/akshay/Xilinix/Lab3_Mysterious/Controller_Top_Module.syr" 
+xst -intstyle ise -ifn "/home/akshay/Xilinix/Lab3_Mysterious/Controller_Top_Module.xst" -ofn "/home/akshay/Xilinix/Lab3_Mysterious/Controller_Top_Module.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc /home/akshay/Xilinix/map.ucf -p xc6slx45-csg324-3 Controller_Top_Module.ngc Controller_Top_Module.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Controller_Top_Module_map.ncd Controller_Top_Module.ngd Controller_Top_Module.pcf 
+par -w -intstyle ise -ol high -mt off Controller_Top_Module_map.ncd Controller_Top_Module.ncd Controller_Top_Module.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Controller_Top_Module.twx Controller_Top_Module.ncd -o Controller_Top_Module.twr Controller_Top_Module.pcf 
+bitgen -intstyle ise -f Controller_Top_Module.ut Controller_Top_Module.ncd 

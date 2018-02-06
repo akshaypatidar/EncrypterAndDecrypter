@@ -36,6 +36,7 @@ entity Encrypter is
            P : in  STD_LOGIC_VECTOR (31 downto 0);
            C : out  STD_LOGIC_VECTOR (31 downto 0);
            reset : in  STD_LOGIC;
+			  done : out STD_LOGIC;
            enable : in  STD_LOGIC);
 end Encrypter;
 
@@ -61,7 +62,8 @@ begin
 		if (reset = '1' or enable='0') then 
 			temp <= "00000000000000000000000000000000";
 			C <= "00000000000000000000000000000000";
-			i <= "000000";
+			i <= "000000"; 
+			done <= '0';
 					
 		elsif (clock'event and clock = '1' and enable = '1') then
 			if (i = "000000") then
@@ -78,8 +80,9 @@ begin
 				i <= i + "000001";
 			elsif (i = N+1) then
 				C <= temp;
+				done <= '1';
 				i <= i + "000001";
-			end if;
+			end if; 
 		end if;
 	end process;
 

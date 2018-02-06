@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/akshay/Xilinix/Lab3_Mysterious/Controller_Top_Module.ncd
+OUTFILE=/home/akshay/Xilinix/Lab3_Mysterious/Controller_Top_Module.bit
+FAMILY=Spartan6
+PART=xc6slx45-3csg324
+WORKINGDIR=/home/akshay/Xilinix/Lab3_Mysterious
+LICENSE=WebPack
+USER_INFO=211461424_0_0_451

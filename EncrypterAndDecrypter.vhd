@@ -49,6 +49,7 @@ architecture Behavioral of EncrypterAndDecrypter is
 				 P : in  STD_LOGIC_VECTOR (31 downto 0);
 				 C : out  STD_LOGIC_VECTOR (31 downto 0);
 				 reset : in  STD_LOGIC;
+				 done : out STD_LOGIC;
 				 enable : in  STD_LOGIC);
 	end component;
 	component Decrypter
@@ -57,6 +58,7 @@ architecture Behavioral of EncrypterAndDecrypter is
 				 C : in  STD_LOGIC_VECTOR (31 downto 0);
 				 P : out  STD_LOGIC_VECTOR (31 downto 0);
 				 reset : in  STD_LOGIC;
+				 done : out STD_LOGIC;
 				 enable : in  STD_LOGIC);
 	end component;
 	

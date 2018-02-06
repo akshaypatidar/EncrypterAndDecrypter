@@ -1,0 +1,666 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 3 -n
+3 -fastpaths -xml Controller_Top_Module.twx Controller_Top_Module.ncd -o
+Controller_Top_Module.twr Controller_Top_Module.pcf
+
+Design file:              Controller_Top_Module.ncd
+Physical constraint file: Controller_Top_Module.pcf
+Device,package,speed:     xc6slx45,csg324,C,-3 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_clk_pin = PERIOD TIMEGRP "clk_pin" 100 MHz HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 1025993 paths analyzed, 2156 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   8.912ns.
+--------------------------------------------------------------------------------
+
+Paths for end point decrypt/P_31 (SLICE_X55Y55.A3), 3083 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     1.088ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               data_inp/temp_data_read_48 (FF)
+  Destination:          decrypt/P_31 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      8.860ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.017ns (0.230 - 0.247)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: data_inp/temp_data_read_48 to decrypt/P_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X45Y57.AQ      Tcko                  0.391   data_inp/temp_data_read<51>
+                                                       data_inp/temp_data_read_48
+    SLICE_X41Y57.C5      net (fanout=5)        0.776   data_inp/temp_data_read<48>
+    SLICE_X41Y57.C       Tilo                  0.259   decrypt/C1/level1<5>
+                                                       encrypt/C1/FA5/carry1
+    SLICE_X41Y57.B4      net (fanout=2)        0.331   decrypt/C1/level1<5>
+    SLICE_X41Y57.B       Tilo                  0.259   decrypt/C1/level1<5>
+                                                       encrypt/C1/FA14/Mxor_sum_xo<0>1
+    SLICE_X45Y56.A5      net (fanout=2)        0.815   decrypt/C1/level1<16>
+    SLICE_X45Y56.A       Tilo                  0.259   encrypt/Madd_N[5]_GND_11_o_add_7_OUT_cy<1>
+                                                       encrypt/C1/FA18/Mxor_sum_xo<0>1
+    SLICE_X44Y55.B1      net (fanout=7)        0.993   decrypt/C1/level1<22>
+    SLICE_X44Y55.B       Tilo                  0.203   encrypt/N[5]_GND_11_o_add_7_OUT<1>
+                                                       encrypt/C1/FA23/Mxor_sum_xo<0>1
+    SLICE_X51Y55.C4      net (fanout=19)       0.991   decrypt/C1/level2<11>
+    SLICE_X51Y55.C       Tilo                  0.259   N45
+                                                       decrypt/Msub_N0[5]_GND_15_o_add_11_OUT_xor<4>111_SW2
+    SLICE_X51Y55.B1      net (fanout=1)        0.581   N45
+    SLICE_X51Y55.B       Tilo                  0.259   N45
+                                                       decrypt/i[5]_N0[5]_LessThan_8_o151
+    SLICE_X56Y54.A3      net (fanout=7)        0.933   decrypt/i[5]_N0[5]_LessThan_8_o15
+    SLICE_X56Y54.A       Tilo                  0.203   decrypt/P<18>
+                                                       decrypt/_n0137_inv1_cepot_rstpot_1
+    SLICE_X55Y55.A3      net (fanout=16)       1.026   decrypt/_n0137_inv1_cepot_rstpot1
+    SLICE_X55Y55.CLK     Tas                   0.322   decrypt/P<31>
+                                                       decrypt/P_31_dpot1
+                                                       decrypt/P_31
+    -------------------------------------------------  ---------------------------
+    Total                                      8.860ns (2.414ns logic, 6.446ns route)
+                                                       (27.2% logic, 72.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.137ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               data_inp/temp_data_read_49 (FF)
+  Destination:          decrypt/P_31 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      8.811ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.017ns (0.230 - 0.247)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: data_inp/temp_data_read_49 to decrypt/P_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X45Y57.BQ      Tcko                  0.391   data_inp/temp_data_read<51>
+                                                       data_inp/temp_data_read_49
+    SLICE_X41Y57.C6      net (fanout=5)        0.727   data_inp/temp_data_read<49>
+    SLICE_X41Y57.C       Tilo                  0.259   decrypt/C1/level1<5>
+                                                       encrypt/C1/FA5/carry1
+    SLICE_X41Y57.B4      net (fanout=2)        0.331   decrypt/C1/level1<5>
+    SLICE_X41Y57.B       Tilo                  0.259   decrypt/C1/level1<5>
+                                                       encrypt/C1/FA14/Mxor_sum_xo<0>1
+    SLICE_X45Y56.A5      net (fanout=2)        0.815   decrypt/C1/level1<16>
+    SLICE_X45Y56.A       Tilo                  0.259   encrypt/Madd_N[5]_GND_11_o_add_7_OUT_cy<1>
+                                                       encrypt/C1/FA18/Mxor_sum_xo<0>1
+    SLICE_X44Y55.B1      net (fanout=7)        0.993   decrypt/C1/level1<22>
+    SLICE_X44Y55.B       Tilo                  0.203   encrypt/N[5]_GND_11_o_add_7_OUT<1>
+                                                       encrypt/C1/FA23/Mxor_sum_xo<0>1
+    SLICE_X51Y55.C4      net (fanout=19)       0.991   decrypt/C1/level2<11>
+    SLICE_X51Y55.C       Tilo                  0.259   N45
+                                                       decrypt/Msub_N0[5]_GND_15_o_add_11_OUT_xor<4>111_SW2
+    SLICE_X51Y55.B1      net (fanout=1)        0.581   N45
+    SLICE_X51Y55.B       Tilo                  0.259   N45
+                                                       decrypt/i[5]_N0[5]_LessThan_8_o151
+    SLICE_X56Y54.A3      net (fanout=7)        0.933   decrypt/i[5]_N0[5]_LessThan_8_o15
+    SLICE_X56Y54.A       Tilo                  0.203   decrypt/P<18>
+                                                       decrypt/_n0137_inv1_cepot_rstpot_1
+    SLICE_X55Y55.A3      net (fanout=16)       1.026   decrypt/_n0137_inv1_cepot_rstpot1
+    SLICE_X55Y55.CLK     Tas                   0.322   decrypt/P<31>
+                                                       decrypt/P_31_dpot1
+                                                       decrypt/P_31
+    -------------------------------------------------  ---------------------------
+    Total                                      8.811ns (2.414ns logic, 6.397ns route)
+                                                       (27.4% logic, 72.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.211ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               data_inp/temp_data_read_47 (FF)
+  Destination:          decrypt/P_31 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      8.731ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.023ns (0.230 - 0.253)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: data_inp/temp_data_read_47 to decrypt/P_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X40Y59.DQ      Tcko                  0.408   data_inp/temp_data_read<47>
+                                                       data_inp/temp_data_read_47
+    SLICE_X41Y57.C1      net (fanout=4)        0.630   data_inp/temp_data_read<47>
+    SLICE_X41Y57.C       Tilo                  0.259   decrypt/C1/level1<5>
+                                                       encrypt/C1/FA5/carry1
+    SLICE_X41Y57.B4      net (fanout=2)        0.331   decrypt/C1/level1<5>
+    SLICE_X41Y57.B       Tilo                  0.259   decrypt/C1/level1<5>
+                                                       encrypt/C1/FA14/Mxor_sum_xo<0>1
+    SLICE_X45Y56.A5      net (fanout=2)        0.815   decrypt/C1/level1<16>
+    SLICE_X45Y56.A       Tilo                  0.259   encrypt/Madd_N[5]_GND_11_o_add_7_OUT_cy<1>
+                                                       encrypt/C1/FA18/Mxor_sum_xo<0>1
+    SLICE_X44Y55.B1      net (fanout=7)        0.993   decrypt/C1/level1<22>
+    SLICE_X44Y55.B       Tilo                  0.203   encrypt/N[5]_GND_11_o_add_7_OUT<1>
+                                                       encrypt/C1/FA23/Mxor_sum_xo<0>1
+    SLICE_X51Y55.C4      net (fanout=19)       0.991   decrypt/C1/level2<11>
+    SLICE_X51Y55.C       Tilo                  0.259   N45
+                                                       decrypt/Msub_N0[5]_GND_15_o_add_11_OUT_xor<4>111_SW2
+    SLICE_X51Y55.B1      net (fanout=1)        0.581   N45
+    SLICE_X51Y55.B       Tilo                  0.259   N45
+                                                       decrypt/i[5]_N0[5]_LessThan_8_o151
+    SLICE_X56Y54.A3      net (fanout=7)        0.933   decrypt/i[5]_N0[5]_LessThan_8_o15
+    SLICE_X56Y54.A       Tilo                  0.203   decrypt/P<18>
+                                                       decrypt/_n0137_inv1_cepot_rstpot_1
+    SLICE_X55Y55.A3      net (fanout=16)       1.026   decrypt/_n0137_inv1_cepot_rstpot1
+    SLICE_X55Y55.CLK     Tas                   0.322   decrypt/P<31>
+                                                       decrypt/P_31_dpot1
+                                                       decrypt/P_31
+    -------------------------------------------------  ---------------------------
+    Total                                      8.731ns (2.431ns logic, 6.300ns route)
+                                                       (27.8% logic, 72.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point encrypt/i_4 (SLICE_X44Y52.A3), 4469 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     1.250ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               data_inp/temp_data_read_54 (FF)
+  Destination:          encrypt/i_4 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      8.705ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.010ns (0.238 - 0.248)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: data_inp/temp_data_read_54 to encrypt/i_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X38Y57.CQ      Tcko                  0.447   data_inp/temp_data_read<55>
+                                                       data_inp/temp_data_read_54
+    SLICE_X42Y58.A1      net (fanout=4)        1.077   data_inp/temp_data_read<54>
+    SLICE_X42Y58.A       Tilo                  0.205   N54
+                                                       encrypt/C1/FA7/Mxor_sum_xo<0>1
+    SLICE_X44Y58.A5      net (fanout=2)        0.414   decrypt/C1/level0<7>
+    SLICE_X44Y58.A       Tilo                  0.203   decrypt/C1/level0<8>
+                                                       encrypt/C1/FA12/Mxor_sum_xo<0>1
+    SLICE_X44Y55.A1      net (fanout=4)        0.868   decrypt/C1/level0<13>
+    SLICE_X44Y55.A       Tilo                  0.203   encrypt/N[5]_GND_11_o_add_7_OUT<1>
+                                                       encrypt/C1/HA4/carry1
+    SLICE_X47Y56.C5      net (fanout=7)        0.528   decrypt/C1/level1<20>
+    SLICE_X47Y56.C       Tilo                  0.259   decrypt/C1/level3<4>
+                                                       encrypt/C1/FA23/carry1
+    SLICE_X47Y55.C1      net (fanout=4)        0.647   decrypt/C1/level3<2>
+    SLICE_X47Y55.C       Tilo                  0.259   N39
+                                                       encrypt/Madd_N[5]_GND_11_o_add_7_OUT_xor<5>111
+    SLICE_X45Y53.C1      net (fanout=4)        0.801   decrypt/Msub_N0[5]_GND_15_o_add_11_OUT_xor<5>11
+    SLICE_X45Y53.C       Tilo                  0.259   encrypt/N[5]_GND_11_o_add_7_OUT<4>
+                                                       encrypt/Madd_N[5]_GND_11_o_add_7_OUT_xor<4>1
+    SLICE_X41Y52.C1      net (fanout=7)        1.037   encrypt/N[5]_GND_11_o_add_7_OUT<4>
+    SLICE_X41Y52.C       Tilo                  0.259   encrypt/temp<25>
+                                                       encrypt/i[5]_N[5]_LessThan_4_o15_2
+    SLICE_X44Y52.A3      net (fanout=12)       0.950   encrypt/i[5]_N[5]_LessThan_4_o152
+    SLICE_X44Y52.CLK     Tas                   0.289   encrypt/i<5>
+                                                       encrypt/i_4_dpot
+                                                       encrypt/i_4
+    -------------------------------------------------  ---------------------------
+    Total                                      8.705ns (2.383ns logic, 6.322ns route)
+                                                       (27.4% logic, 72.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.264ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               data_inp/temp_data_read_50 (FF)
+  Destination:          encrypt/i_4 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      8.692ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.009ns (0.238 - 0.247)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: data_inp/temp_data_read_50 to encrypt/i_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X45Y57.CQ      Tcko                  0.391   data_inp/temp_data_read<51>
+                                                       data_inp/temp_data_read_50
+    SLICE_X40Y57.B2      net (fanout=6)        1.064   data_inp/temp_data_read<50>
+    SLICE_X40Y57.B       Tilo                  0.205   decrypt/C1/level1<7>
+                                                       encrypt/C1/FA15/Mxor_sum_xo<0>1
+    SLICE_X44Y58.B1      net (fanout=2)        1.184   decrypt/C1/level1<17>
+    SLICE_X44Y58.B       Tilo                  0.203   decrypt/C1/level0<8>
+                                                       encrypt/C1/FA19/carry1
+    SLICE_X47Y56.C3      net (fanout=2)        0.885   decrypt/C1/level2<6>
+    SLICE_X47Y56.C       Tilo                  0.259   decrypt/C1/level3<4>
+                                                       encrypt/C1/FA23/carry1
+    SLICE_X47Y55.C1      net (fanout=4)        0.647   decrypt/C1/level3<2>
+    SLICE_X47Y55.C       Tilo                  0.259   N39
+                                                       encrypt/Madd_N[5]_GND_11_o_add_7_OUT_xor<5>111
+    SLICE_X45Y53.C1      net (fanout=4)        0.801   decrypt/Msub_N0[5]_GND_15_o_add_11_OUT_xor<5>11
+    SLICE_X45Y53.C       Tilo                  0.259   encrypt/N[5]_GND_11_o_add_7_OUT<4>
+                                                       encrypt/Madd_N[5]_GND_11_o_add_7_OUT_xor<4>1
+    SLICE_X41Y52.C1      net (fanout=7)        1.037   encrypt/N[5]_GND_11_o_add_7_OUT<4>
+    SLICE_X41Y52.C       Tilo                  0.259   encrypt/temp<25>
+                                                       encrypt/i[5]_N[5]_LessThan_4_o15_2
+    SLICE_X44Y52.A3      net (fanout=12)       0.950   encrypt/i[5]_N[5]_LessThan_4_o152
+    SLICE_X44Y52.CLK     Tas                   0.289   encrypt/i<5>
+                                                       encrypt/i_4_dpot
+                                                       encrypt/i_4
+    -------------------------------------------------  ---------------------------
+    Total                                      8.692ns (2.124ns logic, 6.568ns route)
+                                                       (24.4% logic, 75.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.264ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               data_inp/temp_data_read_55 (FF)
+  Destination:          encrypt/i_4 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      8.691ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.010ns (0.238 - 0.248)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: data_inp/temp_data_read_55 to encrypt/i_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X38Y57.DQ      Tcko                  0.447   data_inp/temp_data_read<55>
+                                                       data_inp/temp_data_read_55
+    SLICE_X40Y57.C3      net (fanout=4)        0.516   data_inp/temp_data_read<55>
+    SLICE_X40Y57.C       Tilo                  0.205   decrypt/C1/level1<7>
+                                                       encrypt/C1/FA7/carry1
+    SLICE_X40Y57.B4      net (fanout=2)        0.286   decrypt/C1/level1<7>
+    SLICE_X40Y57.B       Tilo                  0.205   decrypt/C1/level1<7>
+                                                       encrypt/C1/FA15/Mxor_sum_xo<0>1
+    SLICE_X44Y58.B1      net (fanout=2)        1.184   decrypt/C1/level1<17>
+    SLICE_X44Y58.B       Tilo                  0.203   decrypt/C1/level0<8>
+                                                       encrypt/C1/FA19/carry1
+    SLICE_X47Y56.C3      net (fanout=2)        0.885   decrypt/C1/level2<6>
+    SLICE_X47Y56.C       Tilo                  0.259   decrypt/C1/level3<4>
+                                                       encrypt/C1/FA23/carry1
+    SLICE_X47Y55.C1      net (fanout=4)        0.647   decrypt/C1/level3<2>
+    SLICE_X47Y55.C       Tilo                  0.259   N39
+                                                       encrypt/Madd_N[5]_GND_11_o_add_7_OUT_xor<5>111
+    SLICE_X45Y53.C1      net (fanout=4)        0.801   decrypt/Msub_N0[5]_GND_15_o_add_11_OUT_xor<5>11
+    SLICE_X45Y53.C       Tilo                  0.259   encrypt/N[5]_GND_11_o_add_7_OUT<4>
+                                                       encrypt/Madd_N[5]_GND_11_o_add_7_OUT_xor<4>1
+    SLICE_X41Y52.C1      net (fanout=7)        1.037   encrypt/N[5]_GND_11_o_add_7_OUT<4>
+    SLICE_X41Y52.C       Tilo                  0.259   encrypt/temp<25>
+                                                       encrypt/i[5]_N[5]_LessThan_4_o15_2
+    SLICE_X44Y52.A3      net (fanout=12)       0.950   encrypt/i[5]_N[5]_LessThan_4_o152
+    SLICE_X44Y52.CLK     Tas                   0.289   encrypt/i<5>
+                                                       encrypt/i_4_dpot
+                                                       encrypt/i_4
+    -------------------------------------------------  ---------------------------
+    Total                                      8.691ns (2.385ns logic, 6.306ns route)
+                                                       (27.4% logic, 72.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point decrypt/i_2 (SLICE_X53Y56.C2), 4536 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     1.259ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               data_inp/temp_data_read_48 (FF)
+  Destination:          decrypt/i_2 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      8.689ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.017ns (0.230 - 0.247)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: data_inp/temp_data_read_48 to decrypt/i_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X45Y57.AQ      Tcko                  0.391   data_inp/temp_data_read<51>
+                                                       data_inp/temp_data_read_48
+    SLICE_X41Y57.C5      net (fanout=5)        0.776   data_inp/temp_data_read<48>
+    SLICE_X41Y57.C       Tilo                  0.259   decrypt/C1/level1<5>
+                                                       encrypt/C1/FA5/carry1
+    SLICE_X41Y57.B4      net (fanout=2)        0.331   decrypt/C1/level1<5>
+    SLICE_X41Y57.B       Tilo                  0.259   decrypt/C1/level1<5>
+                                                       encrypt/C1/FA14/Mxor_sum_xo<0>1
+    SLICE_X45Y56.A5      net (fanout=2)        0.815   decrypt/C1/level1<16>
+    SLICE_X45Y56.A       Tilo                  0.259   encrypt/Madd_N[5]_GND_11_o_add_7_OUT_cy<1>
+                                                       encrypt/C1/FA18/Mxor_sum_xo<0>1
+    SLICE_X44Y55.B1      net (fanout=7)        0.993   decrypt/C1/level1<22>
+    SLICE_X44Y55.B       Tilo                  0.203   encrypt/N[5]_GND_11_o_add_7_OUT<1>
+                                                       encrypt/C1/FA23/Mxor_sum_xo<0>1
+    SLICE_X51Y55.C4      net (fanout=19)       0.991   decrypt/C1/level2<11>
+    SLICE_X51Y55.C       Tilo                  0.259   N45
+                                                       decrypt/Msub_N0[5]_GND_15_o_add_11_OUT_xor<4>111_SW2
+    SLICE_X51Y55.B1      net (fanout=1)        0.581   N45
+    SLICE_X51Y55.B       Tilo                  0.259   N45
+                                                       decrypt/i[5]_N0[5]_LessThan_8_o151
+    SLICE_X51Y54.B4      net (fanout=7)        0.517   decrypt/i[5]_N0[5]_LessThan_8_o15
+    SLICE_X51Y54.B       Tilo                  0.259   decrypt/temp<29>
+                                                       decrypt/i[5]_N0[5]_LessThan_8_o14_2
+    SLICE_X53Y56.C2      net (fanout=12)       1.215   decrypt/i[5]_N0[5]_LessThan_8_o141
+    SLICE_X53Y56.CLK     Tas                   0.322   decrypt/i<3>
+                                                       decrypt/i_2_dpot
+                                                       decrypt/i_2
+    -------------------------------------------------  ---------------------------
+    Total                                      8.689ns (2.470ns logic, 6.219ns route)
+                                                       (28.4% logic, 71.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.308ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               data_inp/temp_data_read_49 (FF)
+  Destination:          decrypt/i_2 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      8.640ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.017ns (0.230 - 0.247)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: data_inp/temp_data_read_49 to decrypt/i_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X45Y57.BQ      Tcko                  0.391   data_inp/temp_data_read<51>
+                                                       data_inp/temp_data_read_49
+    SLICE_X41Y57.C6      net (fanout=5)        0.727   data_inp/temp_data_read<49>
+    SLICE_X41Y57.C       Tilo                  0.259   decrypt/C1/level1<5>
+                                                       encrypt/C1/FA5/carry1
+    SLICE_X41Y57.B4      net (fanout=2)        0.331   decrypt/C1/level1<5>
+    SLICE_X41Y57.B       Tilo                  0.259   decrypt/C1/level1<5>
+                                                       encrypt/C1/FA14/Mxor_sum_xo<0>1
+    SLICE_X45Y56.A5      net (fanout=2)        0.815   decrypt/C1/level1<16>
+    SLICE_X45Y56.A       Tilo                  0.259   encrypt/Madd_N[5]_GND_11_o_add_7_OUT_cy<1>
+                                                       encrypt/C1/FA18/Mxor_sum_xo<0>1
+    SLICE_X44Y55.B1      net (fanout=7)        0.993   decrypt/C1/level1<22>
+    SLICE_X44Y55.B       Tilo                  0.203   encrypt/N[5]_GND_11_o_add_7_OUT<1>
+                                                       encrypt/C1/FA23/Mxor_sum_xo<0>1
+    SLICE_X51Y55.C4      net (fanout=19)       0.991   decrypt/C1/level2<11>
+    SLICE_X51Y55.C       Tilo                  0.259   N45
+                                                       decrypt/Msub_N0[5]_GND_15_o_add_11_OUT_xor<4>111_SW2
+    SLICE_X51Y55.B1      net (fanout=1)        0.581   N45
+    SLICE_X51Y55.B       Tilo                  0.259   N45
+                                                       decrypt/i[5]_N0[5]_LessThan_8_o151
+    SLICE_X51Y54.B4      net (fanout=7)        0.517   decrypt/i[5]_N0[5]_LessThan_8_o15
+    SLICE_X51Y54.B       Tilo                  0.259   decrypt/temp<29>
+                                                       decrypt/i[5]_N0[5]_LessThan_8_o14_2
+    SLICE_X53Y56.C2      net (fanout=12)       1.215   decrypt/i[5]_N0[5]_LessThan_8_o141
+    SLICE_X53Y56.CLK     Tas                   0.322   decrypt/i<3>
+                                                       decrypt/i_2_dpot
+                                                       decrypt/i_2
+    -------------------------------------------------  ---------------------------
+    Total                                      8.640ns (2.470ns logic, 6.170ns route)
+                                                       (28.6% logic, 71.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.382ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               data_inp/temp_data_read_47 (FF)
+  Destination:          decrypt/i_2 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      8.560ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.023ns (0.230 - 0.253)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: data_inp/temp_data_read_47 to decrypt/i_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X40Y59.DQ      Tcko                  0.408   data_inp/temp_data_read<47>
+                                                       data_inp/temp_data_read_47
+    SLICE_X41Y57.C1      net (fanout=4)        0.630   data_inp/temp_data_read<47>
+    SLICE_X41Y57.C       Tilo                  0.259   decrypt/C1/level1<5>
+                                                       encrypt/C1/FA5/carry1
+    SLICE_X41Y57.B4      net (fanout=2)        0.331   decrypt/C1/level1<5>
+    SLICE_X41Y57.B       Tilo                  0.259   decrypt/C1/level1<5>
+                                                       encrypt/C1/FA14/Mxor_sum_xo<0>1
+    SLICE_X45Y56.A5      net (fanout=2)        0.815   decrypt/C1/level1<16>
+    SLICE_X45Y56.A       Tilo                  0.259   encrypt/Madd_N[5]_GND_11_o_add_7_OUT_cy<1>
+                                                       encrypt/C1/FA18/Mxor_sum_xo<0>1
+    SLICE_X44Y55.B1      net (fanout=7)        0.993   decrypt/C1/level1<22>
+    SLICE_X44Y55.B       Tilo                  0.203   encrypt/N[5]_GND_11_o_add_7_OUT<1>
+                                                       encrypt/C1/FA23/Mxor_sum_xo<0>1
+    SLICE_X51Y55.C4      net (fanout=19)       0.991   decrypt/C1/level2<11>
+    SLICE_X51Y55.C       Tilo                  0.259   N45
+                                                       decrypt/Msub_N0[5]_GND_15_o_add_11_OUT_xor<4>111_SW2
+    SLICE_X51Y55.B1      net (fanout=1)        0.581   N45
+    SLICE_X51Y55.B       Tilo                  0.259   N45
+                                                       decrypt/i[5]_N0[5]_LessThan_8_o151
+    SLICE_X51Y54.B4      net (fanout=7)        0.517   decrypt/i[5]_N0[5]_LessThan_8_o15
+    SLICE_X51Y54.B       Tilo                  0.259   decrypt/temp<29>
+                                                       decrypt/i[5]_N0[5]_LessThan_8_o14_2
+    SLICE_X53Y56.C2      net (fanout=12)       1.215   decrypt/i[5]_N0[5]_LessThan_8_o141
+    SLICE_X53Y56.CLK     Tas                   0.322   decrypt/i<3>
+                                                       decrypt/i_2_dpot
+                                                       decrypt/i_2
+    -------------------------------------------------  ---------------------------
+    Total                                      8.560ns (2.487ns logic, 6.073ns route)
+                                                       (29.1% logic, 70.9% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_clk_pin = PERIOD TIMEGRP "clk_pin" 100 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point decrypt/temp_4 (SLICE_X50Y53.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.411ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               decrypt/temp_4 (FF)
+  Destination:          decrypt/temp_4 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.411ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 10.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: decrypt/temp_4 to decrypt/temp_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X50Y53.AQ      Tcko                  0.200   decrypt/temp<7>
+                                                       decrypt/temp_4
+    SLICE_X50Y53.A6      net (fanout=2)        0.021   decrypt/temp<4>
+    SLICE_X50Y53.CLK     Tah         (-Th)    -0.190   decrypt/temp<7>
+                                                       decrypt/temp_4_dpot
+                                                       decrypt/temp_4
+    -------------------------------------------------  ---------------------------
+    Total                                      0.411ns (0.390ns logic, 0.021ns route)
+                                                       (94.9% logic, 5.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point decrypt/temp_3 (SLICE_X54Y55.D6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.413ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               decrypt/temp_3 (FF)
+  Destination:          decrypt/temp_3 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.413ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 10.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: decrypt/temp_3 to decrypt/temp_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X54Y55.DQ      Tcko                  0.200   decrypt/temp<3>
+                                                       decrypt/temp_3
+    SLICE_X54Y55.D6      net (fanout=2)        0.023   decrypt/temp<3>
+    SLICE_X54Y55.CLK     Tah         (-Th)    -0.190   decrypt/temp<3>
+                                                       decrypt/temp_3_dpot
+                                                       decrypt/temp_3
+    -------------------------------------------------  ---------------------------
+    Total                                      0.413ns (0.390ns logic, 0.023ns route)
+                                                       (94.4% logic, 5.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point encrypt/temp_19 (SLICE_X40Y53.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.415ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               encrypt/temp_19 (FF)
+  Destination:          encrypt/temp_19 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.415ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 10.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: encrypt/temp_19 to encrypt/temp_19
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X40Y53.AQ      Tcko                  0.200   encrypt/temp<22>
+                                                       encrypt/temp_19
+    SLICE_X40Y53.A6      net (fanout=2)        0.025   encrypt/temp<19>
+    SLICE_X40Y53.CLK     Tah         (-Th)    -0.190   encrypt/temp<22>
+                                                       encrypt/temp_19_dpot
+                                                       encrypt/temp_19
+    -------------------------------------------------  ---------------------------
+    Total                                      0.415ns (0.390ns logic, 0.025ns route)
+                                                       (94.0% logic, 6.0% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk_pin = PERIOD TIMEGRP "clk_pin" 100 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 8.270ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 1.730ns (578.035MHz) (Tbcper_I)
+  Physical resource: clk_BUFGP/BUFG/I0
+  Logical resource: clk_BUFGP/BUFG/I0
+  Location pin: BUFGMUX_X2Y4.I0
+  Clock network: clk_BUFGP/IBUFG
+--------------------------------------------------------------------------------
+Slack: 9.570ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 0.430ns (2325.581MHz) (Tcp)
+  Physical resource: debouncer1/count<3>/CLK
+  Logical resource: debouncer1/count_0/CK
+  Location pin: SLICE_X32Y14.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 9.570ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 0.430ns (2325.581MHz) (Tcp)
+  Physical resource: debouncer1/count<3>/CLK
+  Logical resource: debouncer1/count_1/CK
+  Location pin: SLICE_X32Y14.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    8.912|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 1025993 paths, 0 nets, and 2614 connections
+
+Design statistics:
+   Minimum period:   8.912ns{1}   (Maximum frequency: 112.208MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Tue Feb  6 15:18:55 2018 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 451 MB
+
+
+

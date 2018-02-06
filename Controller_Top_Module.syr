@@ -5,17 +5,17 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
-Reading design: EncrypterAndDecrypter.prj
+Reading design: Controller_Top_Module.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
@@ -43,16 +43,16 @@ TABLE OF CONTENTS
 *                      Synthesis Options Summary                        *
 =========================================================================
 ---- Source Parameters
-Input File Name                    : "EncrypterAndDecrypter.prj"
+Input File Name                    : "Controller_Top_Module.prj"
 Ignore Synthesis Constraint File   : NO
 
 ---- Target Parameters
-Output File Name                   : "EncrypterAndDecrypter"
+Output File Name                   : "Controller_Top_Module"
 Output Format                      : NGC
 Target Device                      : xc6slx45-3-csg324
 
 ---- Source Options
-Top Module Name                    : EncrypterAndDecrypter
+Top Module Name                    : Controller_Top_Module
 Automatic FSM Extraction           : YES
 FSM Encoding Algorithm             : Auto
 Safe Implementation                : No
@@ -117,21 +117,36 @@ Parsing architecture <Behavioral> of entity <fulladder>.
 Parsing VHDL file "/home/akshay/Xilinix/Lab3_Mysterious/Count.vhd" into library work
 Parsing entity <Count>.
 Parsing architecture <Behavioral> of entity <count>.
+Parsing VHDL file "/home/akshay/Xilinix/module_fpga/read_multiple_data_bytes.vhd" into library work
+Parsing entity <read_multiple_data_bytes>.
+Parsing architecture <Behavioral> of entity <read_multiple_data_bytes>.
+Parsing VHDL file "/home/akshay/Xilinix/module_fpga/display_multiple_data_bytes.vhd" into library work
+Parsing entity <display_multiple_data_bytes>.
+Parsing architecture <Behavioral> of entity <display_multiple_data_bytes>.
+Parsing VHDL file "/home/akshay/Xilinix/module_fpga/debouncer.vhd" into library work
+Parsing entity <debouncer>.
+Parsing architecture <Behavioral> of entity <debouncer>.
 Parsing VHDL file "/home/akshay/Xilinix/Lab3_Mysterious/Encrypter.vhd" into library work
 Parsing entity <Encrypter>.
 Parsing architecture <Behavioral> of entity <encrypter>.
 Parsing VHDL file "/home/akshay/Xilinix/Lab3_Mysterious/Decrypter.vhd" into library work
 Parsing entity <Decrypter>.
 Parsing architecture <Behavioral> of entity <decrypter>.
-Parsing VHDL file "/home/akshay/Xilinix/Lab3_Mysterious/EncrypterAndDecrypter.vhd" into library work
-Parsing entity <EncrypterAndDecrypter>.
-Parsing architecture <Behavioral> of entity <encrypteranddecrypter>.
+Parsing VHDL file "/home/akshay/Xilinix/module_fpga/Controller_Top_Module.vhd" into library work
+Parsing entity <Controller_Top_Module>.
+Parsing architecture <Behavioral> of entity <controller_top_module>.
 
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
 
-Elaborating entity <EncrypterAndDecrypter> (architecture <Behavioral>) from library <work>.
+Elaborating entity <Controller_Top_Module> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <debouncer> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <read_multiple_data_bytes> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <display_multiple_data_bytes> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <Encrypter> (architecture <Behavioral>) from library <work>.
 
@@ -147,26 +162,67 @@ Elaborating entity <Decrypter> (architecture <Behavioral>) from library <work>.
 *                           HDL Synthesis                               *
 =========================================================================
 
-Synthesizing Unit <EncrypterAndDecrypter>.
-    Related source file is "/home/akshay/Xilinix/Lab3_Mysterious/EncrypterAndDecrypter.vhd".
+Synthesizing Unit <Controller_Top_Module>.
+    Related source file is "/home/akshay/Xilinix/module_fpga/Controller_Top_Module.vhd".
+    Found 1-bit register for signal <system_state>.
     Summary:
-	no macro.
-Unit <EncrypterAndDecrypter> synthesized.
+	inferred   1 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <Controller_Top_Module> synthesized.
+
+Synthesizing Unit <debouncer>.
+    Related source file is "/home/akshay/Xilinix/module_fpga/debouncer.vhd".
+        wait_cycles = "11110100001000111111"
+    Found 1-bit register for signal <oldbutton>.
+    Found 1-bit register for signal <button_deb>.
+    Found 20-bit register for signal <count>.
+    Found 20-bit adder for signal <count[19]_GND_6_o_add_0_OUT> created at line 56.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  22 D-type flip-flop(s).
+Unit <debouncer> synthesized.
+
+Synthesizing Unit <read_multiple_data_bytes>.
+    Related source file is "/home/akshay/Xilinix/module_fpga/read_multiple_data_bytes.vhd".
+    Found 64-bit register for signal <temp_data_read>.
+    Found 3-bit register for signal <pos_read>.
+    Found 1-bit register for signal <old_next_data>.
+    Found 7-bit adder for signal <n0113> created at line 53.
+    Found 3-bit adder for signal <pos_read[2]_GND_8_o_add_25_OUT> created at line 1241.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  68 D-type flip-flop(s).
+	inferred  72 Multiplexer(s).
+Unit <read_multiple_data_bytes> synthesized.
+
+Synthesizing Unit <display_multiple_data_bytes>.
+    Related source file is "/home/akshay/Xilinix/module_fpga/display_multiple_data_bytes.vhd".
+    Found 2-bit register for signal <pos_display>.
+    Found 32-bit register for signal <old_data_in>.
+    Found 1-bit register for signal <old_next_data>.
+    Found 6-bit adder for signal <n0040> created at line 51.
+    Found 2-bit adder for signal <pos_display[1]_GND_10_o_add_20_OUT> created at line 1241.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  35 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <display_multiple_data_bytes> synthesized.
 
 Synthesizing Unit <Encrypter>.
     Related source file is "/home/akshay/Xilinix/Lab3_Mysterious/Encrypter.vhd".
     Found 32-bit register for signal <C>.
     Found 6-bit register for signal <i>.
+    Found 1-bit register for signal <done>.
     Found 4-bit register for signal <T>.
     Found 32-bit register for signal <temp>.
-    Found 4-bit adder for signal <T[3]_GND_7_o_add_5_OUT> created at line 77.
-    Found 6-bit adder for signal <N[5]_GND_7_o_add_7_OUT> created at line 79.
-    Found 6-bit adder for signal <i[5]_GND_7_o_add_9_OUT> created at line 81.
-    Found 6-bit comparator greater for signal <i[5]_N[5]_LessThan_4_o> created at line 75
-    Found 6-bit comparator not equal for signal <i[5]_N[5]_equal_9_o> created at line 79
+    Found 4-bit adder for signal <T[3]_GND_11_o_add_5_OUT> created at line 79.
+    Found 6-bit adder for signal <N[5]_GND_11_o_add_7_OUT> created at line 81.
+    Found 6-bit adder for signal <i[5]_GND_11_o_add_9_OUT> created at line 84.
+    Found 6-bit comparator greater for signal <i[5]_N[5]_LessThan_4_o> created at line 77
+    Found 6-bit comparator not equal for signal <i[5]_N[5]_equal_9_o> created at line 81
     Summary:
 	inferred   3 Adder/Subtractor(s).
-	inferred  74 D-type flip-flop(s).
+	inferred  75 D-type flip-flop(s).
 	inferred   2 Comparator(s).
 	inferred   2 Multiplexer(s).
 Unit <Encrypter> synthesized.
@@ -191,16 +247,17 @@ Synthesizing Unit <Decrypter>.
     Related source file is "/home/akshay/Xilinix/Lab3_Mysterious/Decrypter.vhd".
     Found 32-bit register for signal <P>.
     Found 6-bit register for signal <i>.
+    Found 1-bit register for signal <done>.
     Found 4-bit register for signal <T>.
     Found 32-bit register for signal <temp>.
-    Found 4-bit adder for signal <T[3]_PWR_11_o_add_10_OUT> created at line 83.
-    Found 6-bit adder for signal <i[5]_GND_11_o_add_13_OUT> created at line 86.
-    Found 6-bit subtractor for signal <N0[5]_GND_11_o_add_11_OUT> created at line 84.
-    Found 6-bit comparator greater for signal <i[5]_N0[5]_LessThan_8_o> created at line 80
-    Found 6-bit comparator not equal for signal <i[5]_N0[5]_equal_13_o> created at line 84
+    Found 4-bit adder for signal <T[3]_PWR_15_o_add_10_OUT> created at line 85.
+    Found 6-bit adder for signal <i[5]_GND_15_o_add_13_OUT> created at line 89.
+    Found 6-bit subtractor for signal <N0[5]_GND_15_o_add_11_OUT> created at line 86.
+    Found 6-bit comparator greater for signal <i[5]_N0[5]_LessThan_8_o> created at line 82
+    Found 6-bit comparator not equal for signal <i[5]_N0[5]_equal_13_o> created at line 86
     Summary:
 	inferred   3 Adder/Subtractor(s).
-	inferred  74 D-type flip-flop(s).
+	inferred  75 D-type flip-flop(s).
 	inferred   2 Comparator(s).
 	inferred   1 Multiplexer(s).
 Unit <Decrypter> synthesized.
@@ -209,24 +266,36 @@ Unit <Decrypter> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 6
+# Adders/Subtractors                                   : 15
+ 2-bit adder                                           : 1
+ 20-bit adder                                          : 5
+ 3-bit adder                                           : 1
  4-bit adder                                           : 2
- 6-bit adder                                           : 3
+ 6-bit adder                                           : 4
  6-bit subtractor                                      : 1
-# Registers                                            : 8
- 32-bit register                                       : 4
+ 7-bit adder                                           : 1
+# Registers                                            : 32
+ 1-bit register                                        : 15
+ 2-bit register                                        : 1
+ 20-bit register                                       : 5
+ 3-bit register                                        : 1
+ 32-bit register                                       : 5
  4-bit register                                        : 2
  6-bit register                                        : 2
+ 64-bit register                                       : 1
 # Comparators                                          : 4
  6-bit comparator greater                              : 2
  6-bit comparator not equal                            : 2
-# Multiplexers                                         : 3
- 32-bit 2-to-1 multiplexer                             : 1
+# Multiplexers                                         : 78
+ 1-bit 2-to-1 multiplexer                              : 64
+ 2-bit 2-to-1 multiplexer                              : 1
+ 32-bit 2-to-1 multiplexer                             : 3
  4-bit 2-to-1 multiplexer                              : 2
-# Xors                                                 : 128
- 1-bit xor2                                            : 118
+ 8-bit 2-to-1 multiplexer                              : 8
+# Xors                                                 : 139
+ 1-bit xor2                                            : 128
  1-bit xor8                                            : 8
- 32-bit xor2                                           : 2
+ 32-bit xor2                                           : 3
 
 =========================================================================
 
@@ -245,31 +314,46 @@ The following registers are absorbed into counter <i>: 1 register on signal <i>.
 The following registers are absorbed into counter <T>: 1 register on signal <T>.
 Unit <Encrypter> synthesized (advanced).
 
+Synthesizing (advanced) Unit <debouncer>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <debouncer> synthesized (advanced).
+
+Synthesizing (advanced) Unit <read_multiple_data_bytes>.
+The following registers are absorbed into counter <pos_read>: 1 register on signal <pos_read>.
+Unit <read_multiple_data_bytes> synthesized (advanced).
+
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 3
+# Adders/Subtractors                                   : 11
+ 2-bit adder                                           : 1
+ 20-bit adder                                          : 5
  4-bit adder                                           : 1
- 6-bit adder                                           : 1
+ 6-bit adder                                           : 2
  6-bit subtractor                                      : 1
-# Counters                                             : 3
+ 7-bit adder                                           : 1
+# Counters                                             : 9
+ 20-bit up counter                                     : 5
+ 3-bit up counter                                      : 1
  4-bit up counter                                      : 1
  6-bit up counter                                      : 2
 # Accumulators                                         : 1
  4-bit up loadable accumulator                         : 1
-# Registers                                            : 128
- Flip-Flops                                            : 128
+# Registers                                            : 241
+ Flip-Flops                                            : 241
 # Comparators                                          : 4
  6-bit comparator greater                              : 2
  6-bit comparator not equal                            : 2
-# Multiplexers                                         : 2
- 32-bit 2-to-1 multiplexer                             : 1
+# Multiplexers                                         : 76
+ 1-bit 2-to-1 multiplexer                              : 64
+ 32-bit 2-to-1 multiplexer                             : 3
  4-bit 2-to-1 multiplexer                              : 1
-# Xors                                                 : 128
- 1-bit xor2                                            : 118
+ 8-bit 2-to-1 multiplexer                              : 8
+# Xors                                                 : 139
+ 1-bit xor2                                            : 128
  1-bit xor8                                            : 8
- 32-bit xor2                                           : 2
+ 32-bit xor2                                           : 3
 
 =========================================================================
 
@@ -277,7 +361,13 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 
-Optimizing unit <EncrypterAndDecrypter> ...
+Optimizing unit <Controller_Top_Module> ...
+
+Optimizing unit <read_multiple_data_bytes> ...
+
+Optimizing unit <debouncer> ...
+
+Optimizing unit <display_multiple_data_bytes> ...
 
 Optimizing unit <Encrypter> ...
 
@@ -285,7 +375,7 @@ Optimizing unit <Decrypter> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block EncrypterAndDecrypter, actual ratio is 0.
+Found area constraint ratio of 100 (+ 5) on block Controller_Top_Module, actual ratio is 2.
 
 Final Macro Processing ...
 
@@ -293,8 +383,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 148
- Flip-Flops                                            : 148
+# Registers                                            : 364
+ Flip-Flops                                            : 364
 
 =========================================================================
 
@@ -313,26 +403,33 @@ Partition Implementation Status
 *                            Design Summary                             *
 =========================================================================
 
-Top Level Output File Name         : EncrypterAndDecrypter.ngc
+Top Level Output File Name         : Controller_Top_Module.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 277
-#      LUT2                        : 5
-#      LUT3                        : 20
-#      LUT4                        : 11
-#      LUT5                        : 174
-#      LUT6                        : 64
-#      MUXF7                       : 3
-# FlipFlops/Latches                : 148
-#      FD                          : 8
-#      FDC                         : 76
-#      FDCE                        : 64
+# BELS                             : 1037
+#      GND                         : 1
+#      INV                         : 11
+#      LUT1                        : 190
+#      LUT2                        : 18
+#      LUT3                        : 30
+#      LUT4                        : 10
+#      LUT5                        : 152
+#      LUT6                        : 223
+#      MUXCY                       : 201
+#      VCC                         : 1
+#      XORCY                       : 200
+# FlipFlops/Latches                : 364
+#      FD                          : 11
+#      FDC                         : 98
+#      FDCE                        : 147
+#      FDE                         : 8
+#      FDR                         : 100
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 132
-#      IBUF                        : 68
-#      OBUF                        : 64
+# IO Buffers                       : 21
+#      IBUF                        : 13
+#      OBUF                        : 8
 
 Device utilization summary:
 ---------------------------
@@ -341,20 +438,20 @@ Selected Device : 6slx45csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             148  out of  54576     0%  
- Number of Slice LUTs:                  274  out of  27288     1%  
-    Number used as Logic:               274  out of  27288     1%  
+ Number of Slice Registers:             364  out of  54576     0%  
+ Number of Slice LUTs:                  634  out of  27288     2%  
+    Number used as Logic:               634  out of  27288     2%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    274
-   Number with an unused Flip Flop:     126  out of    274    45%  
-   Number with an unused LUT:             0  out of    274     0%  
-   Number of fully used LUT-FF pairs:   148  out of    274    54%  
-   Number of unique control sets:         5
+ Number of LUT Flip Flop pairs used:    660
+   Number with an unused Flip Flop:     296  out of    660    44%  
+   Number with an unused LUT:            26  out of    660     3%  
+   Number of fully used LUT-FF pairs:   338  out of    660    51%  
+   Number of unique control sets:        17
 
 IO Utilization: 
- Number of IOs:                         133
- Number of bonded IOBs:                 133  out of    218    61%  
+ Number of IOs:                          22
+ Number of bonded IOBs:                  22  out of    218    10%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
@@ -380,7 +477,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clock                              | BUFGP                  | 148   |
+clk                                | BUFGP                  | 364   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -391,9 +488,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 4.954ns (Maximum Frequency: 201.847MHz)
-   Minimum input arrival time before clock: 13.560ns
-   Maximum output required time after clock: 3.668ns
+   Minimum period: 9.724ns (Maximum Frequency: 102.837MHz)
+   Minimum input arrival time before clock: 4.320ns
+   Maximum output required time after clock: 6.648ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -401,101 +498,99 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'clock'
-  Clock period: 4.954ns (frequency: 201.847MHz)
-  Total number of paths / destination ports: 3561 / 212
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 9.724ns (frequency: 102.837MHz)
+  Total number of paths / destination ports: 1025993 / 859
 -------------------------------------------------------------------------
-Delay:               4.954ns (Levels of Logic = 4)
-  Source:            DE1/i_0 (FF)
-  Destination:       DE1/temp_31 (FF)
-  Source Clock:      clock rising
-  Destination Clock: clock rising
+Delay:               9.724ns (Levels of Logic = 7)
+  Source:            data_inp/temp_data_read_58 (FF)
+  Destination:       encrypt/C_31 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
 
-  Data Path: DE1/i_0 to DE1/temp_31
+  Data Path: data_inp/temp_data_read_58 to encrypt/C_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             16   0.447   1.005  DE1/i_0 (DE1/i_0)
-     LUT4:I3->O            1   0.205   0.580  DE1/i[5]_N0[5]_LessThan_8_o11 (DE1/i[5]_N0[5]_LessThan_8_o1)
-     LUT6:I5->O            6   0.205   0.973  DE1/i[5]_N0[5]_LessThan_8_o12 (DE1/i[5]_N0[5]_LessThan_8_o11)
-     LUT6:I3->O           17   0.205   1.028  DE1/_n0155_inv1 (DE1/_n0155_inv)
-     LUT5:I4->O            1   0.205   0.000  DE1/temp_31_rstpot (DE1/temp_31_rstpot)
-     FDC:D                     0.102          DE1/temp_31
+     FDC:C->Q              4   0.447   0.912  data_inp/temp_data_read_58 (data_inp/temp_data_read_58)
+     LUT3:I0->O            2   0.205   0.721  encrypt/C1/FA8/Mxor_sum_xo<0>1 (decrypt/C1/level0<8>)
+     LUT5:I3->O            6   0.203   0.973  encrypt/C1/FA12/carry1 (decrypt/C1/level1<13>)
+     LUT3:I0->O            4   0.205   0.912  encrypt/C1/FA17/Mxor_sum_xo<0>1 (decrypt/C1/level1<21>)
+     LUT5:I2->O           19   0.205   1.072  encrypt/C1/FA23/Mxor_sum_xo<0>1 (decrypt/C1/level2<11>)
+     LUT6:I5->O            1   0.205   0.827  encrypt/i[5]_N[5]_LessThan_4_o151_SW2 (N39)
+     LUT6:I2->O            5   0.203   0.819  encrypt/i[5]_N[5]_LessThan_4_o151 (encrypt/i[5]_N[5]_LessThan_4_o15)
+     LUT6:I4->O           32   0.203   1.291  encrypt/_n0107_inv1_cepot (encrypt/_n0107_inv1_cepot)
+     FDCE:CE                   0.322          encrypt/C_0
     ----------------------------------------
-    Total                      4.954ns (1.369ns logic, 3.585ns route)
-                                       (27.6% logic, 72.4% route)
+    Total                      9.724ns (2.198ns logic, 7.526ns route)
+                                       (22.6% logic, 77.4% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'clock'
-  Total number of paths / destination ports: 1562297 / 352
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 174 / 174
 -------------------------------------------------------------------------
-Offset:              13.560ns (Levels of Logic = 11)
-  Source:            K<3> (PAD)
-  Destination:       EN1/C_31 (FF)
-  Destination Clock: clock rising
+Offset:              4.320ns (Levels of Logic = 4)
+  Source:            reset (PAD)
+  Destination:       debouncer5/button_deb (FF)
+  Destination Clock: clk rising
 
-  Data Path: K<3> to EN1/C_31
+  Data Path: reset to debouncer5/button_deb
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             4   1.222   0.912  K_3_IBUF (K_3_IBUF)
-     LUT3:I0->O            2   0.205   0.961  EN1/C1/FA1/Mxor_sum_xo<0>1 (DE1/C1/level0<1>)
-     LUT5:I0->O            4   0.203   1.048  EN1/C1/FA10/Mxor_sum_xo<0>1 (DE1/C1/level0<11>)
-     LUT6:I0->O            5   0.203   0.962  EN1/C1/HA4/carry1 (DE1/C1/level1<20>)
-     LUT5:I1->O            3   0.203   0.898  EN1/C1/FA23/carry1 (DE1/C1/level3<2>)
-     LUT5:I1->O           12   0.203   1.273  EN1/C1/FA25/Mxor_sum_xo<0>1 (DE1/C1/level3<4>)
-     LUT6:I0->O            4   0.203   0.931  EN1/Madd_N[5]_GND_7_o_add_7_OUT_xor<4>121 (EN1/Madd_N[5]_GND_7_o_add_7_OUT_xor<4>12)
-     LUT5:I1->O            3   0.203   1.015  EN1/Madd_N[5]_GND_7_o_add_7_OUT_xor<5>1 (EN1/N[5]_GND_7_o_add_7_OUT<5>)
-     LUT6:I0->O           12   0.203   0.909  EN1/i[5]_N[5]_LessThan_4_o12 (EN1/i[5]_N[5]_LessThan_4_o11)
-     LUT6:I5->O           32   0.205   1.292  EN1/i[5]_N[5]_LessThan_4_o15 (EN1/i[5]_N[5]_LessThan_4_o)
-     LUT5:I4->O            1   0.205   0.000  EN1/C_0_dpot (EN1/C_0_dpot)
-     FDCE:D                    0.102          EN1/C_0
+     IBUF:I->O             3   1.222   0.995  reset_IBUF (reset_IBUF)
+     LUT6:I1->O            1   0.203   0.580  debouncer5/_n0022_inv11 (debouncer5/_n0022_inv1)
+     LUT6:I5->O            1   0.205   0.808  debouncer5/_n0022_inv15 (debouncer5/_n0022_inv)
+     LUT3:I0->O            1   0.205   0.000  debouncer5/button_deb_rstpot (debouncer5/button_deb_rstpot)
+     FD:D                      0.102          debouncer5/button_deb
     ----------------------------------------
-    Total                     13.560ns (3.360ns logic, 10.200ns route)
-                                       (24.8% logic, 75.2% route)
+    Total                      4.320ns (1.937ns logic, 2.383ns route)
+                                       (44.8% logic, 55.2% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clock'
-  Total number of paths / destination ports: 64 / 64
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 176 / 8
 -------------------------------------------------------------------------
-Offset:              3.668ns (Levels of Logic = 1)
-  Source:            EN1/C_31 (FF)
-  Destination:       C_out<31> (PAD)
-  Source Clock:      clock rising
+Offset:              6.648ns (Levels of Logic = 3)
+  Source:            system_state (FF)
+  Destination:       data_out_leds<7> (PAD)
+  Source Clock:      clk rising
 
-  Data Path: EN1/C_31 to C_out<31>
+  Data Path: system_state to data_out_leds<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             3   0.447   0.650  EN1/C_31 (EN1/C_31)
-     OBUF:I->O                 2.571          C_out_31_OBUF (C_out<31>)
+     FD:C->Q              33   0.447   1.650  system_state (system_state)
+     LUT5:I0->O            3   0.203   0.995  Mmux_data_to_be_displayed251 (data_to_be_displayed<31>)
+     LUT6:I1->O            1   0.203   0.579  data_out/data_out<7><7>1 (data_out_leds_7_OBUF)
+     OBUF:I->O                 2.571          data_out_leds_7_OBUF (data_out_leds<7>)
     ----------------------------------------
-    Total                      3.668ns (3.018ns logic, 0.650ns route)
-                                       (82.3% logic, 17.7% route)
+    Total                      6.648ns (3.424ns logic, 3.224ns route)
+                                       (51.5% logic, 48.5% route)
 
 =========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock clock
+Clock to Setup on destination clock clk
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clock          |    4.954|         |         |         |
+clk            |    9.724|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 6.56 secs
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 8.21 secs
  
 --> 
 
 
-Total memory usage is 390660 kilobytes
+Total memory usage is 391932 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

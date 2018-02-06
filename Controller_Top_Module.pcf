@@ -1,0 +1,179 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Tue Feb 06 15:18:37 2018
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "L15" LEVEL 1;
+COMP "next_data_out_button" LOCATE = SITE "F6" LEVEL 1;
+COMP "next_data_in_button" LOCATE = SITE "P4" LEVEL 1;
+COMP "data_out_leds<0>" LOCATE = SITE "U18" LEVEL 1;
+COMP "data_out_leds<1>" LOCATE = SITE "M14" LEVEL 1;
+COMP "data_out_leds<2>" LOCATE = SITE "N14" LEVEL 1;
+COMP "data_out_leds<3>" LOCATE = SITE "L14" LEVEL 1;
+COMP "data_out_leds<4>" LOCATE = SITE "M13" LEVEL 1;
+COMP "data_out_leds<5>" LOCATE = SITE "D4" LEVEL 1;
+COMP "data_out_leds<6>" LOCATE = SITE "P16" LEVEL 1;
+COMP "data_out_leds<7>" LOCATE = SITE "N12" LEVEL 1;
+COMP "start_decrypt_button" LOCATE = SITE "P3" LEVEL 1;
+COMP "reset" LOCATE = SITE "F5" LEVEL 1;
+COMP "start_encrypt_button" LOCATE = SITE "N4" LEVEL 1;
+COMP "data_in_sliders<0>" LOCATE = SITE "A10" LEVEL 1;
+COMP "data_in_sliders<1>" LOCATE = SITE "D14" LEVEL 1;
+COMP "data_in_sliders<2>" LOCATE = SITE "C14" LEVEL 1;
+COMP "data_in_sliders<3>" LOCATE = SITE "P15" LEVEL 1;
+COMP "data_in_sliders<4>" LOCATE = SITE "P12" LEVEL 1;
+COMP "data_in_sliders<5>" LOCATE = SITE "R5" LEVEL 1;
+COMP "data_in_sliders<6>" LOCATE = SITE "T5" LEVEL 1;
+COMP "data_in_sliders<7>" LOCATE = SITE "E4" LEVEL 1;
+TIMEGRP clk_pin = BEL "data_inp/pos_read_2" BEL "data_inp/pos_read_1" BEL
+        "data_inp/pos_read_0" BEL "data_inp/temp_data_read_63" BEL
+        "data_inp/temp_data_read_62" BEL "data_inp/temp_data_read_61" BEL
+        "data_inp/temp_data_read_60" BEL "data_inp/temp_data_read_59" BEL
+        "data_inp/temp_data_read_58" BEL "data_inp/temp_data_read_57" BEL
+        "data_inp/temp_data_read_56" BEL "data_inp/temp_data_read_55" BEL
+        "data_inp/temp_data_read_54" BEL "data_inp/temp_data_read_53" BEL
+        "data_inp/temp_data_read_52" BEL "data_inp/temp_data_read_51" BEL
+        "data_inp/temp_data_read_50" BEL "data_inp/temp_data_read_49" BEL
+        "data_inp/temp_data_read_48" BEL "data_inp/temp_data_read_47" BEL
+        "data_inp/temp_data_read_46" BEL "data_inp/temp_data_read_45" BEL
+        "data_inp/temp_data_read_44" BEL "data_inp/temp_data_read_43" BEL
+        "data_inp/temp_data_read_42" BEL "data_inp/temp_data_read_41" BEL
+        "data_inp/temp_data_read_40" BEL "data_inp/temp_data_read_39" BEL
+        "data_inp/temp_data_read_38" BEL "data_inp/temp_data_read_37" BEL
+        "data_inp/temp_data_read_36" BEL "data_inp/temp_data_read_35" BEL
+        "data_inp/temp_data_read_34" BEL "data_inp/temp_data_read_33" BEL
+        "data_inp/temp_data_read_32" BEL "data_inp/temp_data_read_31" BEL
+        "data_inp/temp_data_read_30" BEL "data_inp/temp_data_read_29" BEL
+        "data_inp/temp_data_read_28" BEL "data_inp/temp_data_read_27" BEL
+        "data_inp/temp_data_read_26" BEL "data_inp/temp_data_read_25" BEL
+        "data_inp/temp_data_read_24" BEL "data_inp/temp_data_read_23" BEL
+        "data_inp/temp_data_read_22" BEL "data_inp/temp_data_read_21" BEL
+        "data_inp/temp_data_read_20" BEL "data_inp/temp_data_read_19" BEL
+        "data_inp/temp_data_read_18" BEL "data_inp/temp_data_read_17" BEL
+        "data_inp/temp_data_read_16" BEL "data_inp/temp_data_read_15" BEL
+        "data_inp/temp_data_read_14" BEL "data_inp/temp_data_read_13" BEL
+        "data_inp/temp_data_read_12" BEL "data_inp/temp_data_read_11" BEL
+        "data_inp/temp_data_read_10" BEL "data_inp/temp_data_read_9" BEL
+        "data_inp/temp_data_read_8" BEL "data_inp/temp_data_read_7" BEL
+        "data_inp/temp_data_read_6" BEL "data_inp/temp_data_read_5" BEL
+        "data_inp/temp_data_read_4" BEL "data_inp/temp_data_read_3" BEL
+        "data_inp/temp_data_read_2" BEL "data_inp/temp_data_read_1" BEL
+        "data_inp/temp_data_read_0" BEL "data_inp/old_next_data" BEL
+        "debouncer5/count_19" BEL "debouncer5/count_18" BEL
+        "debouncer5/count_17" BEL "debouncer5/count_16" BEL
+        "debouncer5/count_15" BEL "debouncer5/count_14" BEL
+        "debouncer5/count_13" BEL "debouncer5/count_12" BEL
+        "debouncer5/count_11" BEL "debouncer5/count_10" BEL
+        "debouncer5/count_9" BEL "debouncer5/count_8" BEL "debouncer5/count_7"
+        BEL "debouncer5/count_6" BEL "debouncer5/count_5" BEL
+        "debouncer5/count_4" BEL "debouncer5/count_3" BEL "debouncer5/count_2"
+        BEL "debouncer5/count_1" BEL "debouncer5/count_0" BEL
+        "debouncer4/count_19" BEL "debouncer4/count_18" BEL
+        "debouncer4/count_17" BEL "debouncer4/count_16" BEL
+        "debouncer4/count_15" BEL "debouncer4/count_14" BEL
+        "debouncer4/count_13" BEL "debouncer4/count_12" BEL
+        "debouncer4/count_11" BEL "debouncer4/count_10" BEL
+        "debouncer4/count_9" BEL "debouncer4/count_8" BEL "debouncer4/count_7"
+        BEL "debouncer4/count_6" BEL "debouncer4/count_5" BEL
+        "debouncer4/count_4" BEL "debouncer4/count_3" BEL "debouncer4/count_2"
+        BEL "debouncer4/count_1" BEL "debouncer4/count_0" BEL
+        "debouncer3/count_19" BEL "debouncer3/count_18" BEL
+        "debouncer3/count_17" BEL "debouncer3/count_16" BEL
+        "debouncer3/count_15" BEL "debouncer3/count_14" BEL
+        "debouncer3/count_13" BEL "debouncer3/count_12" BEL
+        "debouncer3/count_11" BEL "debouncer3/count_10" BEL
+        "debouncer3/count_9" BEL "debouncer3/count_8" BEL "debouncer3/count_7"
+        BEL "debouncer3/count_6" BEL "debouncer3/count_5" BEL
+        "debouncer3/count_4" BEL "debouncer3/count_3" BEL "debouncer3/count_2"
+        BEL "debouncer3/count_1" BEL "debouncer3/count_0" BEL
+        "debouncer2/count_19" BEL "debouncer2/count_18" BEL
+        "debouncer2/count_17" BEL "debouncer2/count_16" BEL
+        "debouncer2/count_15" BEL "debouncer2/count_14" BEL
+        "debouncer2/count_13" BEL "debouncer2/count_12" BEL
+        "debouncer2/count_11" BEL "debouncer2/count_10" BEL
+        "debouncer2/count_9" BEL "debouncer2/count_8" BEL "debouncer2/count_7"
+        BEL "debouncer2/count_6" BEL "debouncer2/count_5" BEL
+        "debouncer2/count_4" BEL "debouncer2/count_3" BEL "debouncer2/count_2"
+        BEL "debouncer2/count_1" BEL "debouncer2/count_0" BEL
+        "debouncer1/count_19" BEL "debouncer1/count_18" BEL
+        "debouncer1/count_17" BEL "debouncer1/count_16" BEL
+        "debouncer1/count_15" BEL "debouncer1/count_14" BEL
+        "debouncer1/count_13" BEL "debouncer1/count_12" BEL
+        "debouncer1/count_11" BEL "debouncer1/count_10" BEL
+        "debouncer1/count_9" BEL "debouncer1/count_8" BEL "debouncer1/count_7"
+        BEL "debouncer1/count_6" BEL "debouncer1/count_5" BEL
+        "debouncer1/count_4" BEL "debouncer1/count_3" BEL "debouncer1/count_2"
+        BEL "debouncer1/count_1" BEL "debouncer1/count_0" BEL
+        "data_out/old_next_data" BEL "data_out/old_data_in_31" BEL
+        "data_out/old_data_in_30" BEL "data_out/old_data_in_29" BEL
+        "data_out/old_data_in_28" BEL "data_out/old_data_in_27" BEL
+        "data_out/old_data_in_26" BEL "data_out/old_data_in_25" BEL
+        "data_out/old_data_in_24" BEL "data_out/old_data_in_23" BEL
+        "data_out/old_data_in_22" BEL "data_out/old_data_in_21" BEL
+        "data_out/old_data_in_20" BEL "data_out/old_data_in_19" BEL
+        "data_out/old_data_in_18" BEL "data_out/old_data_in_17" BEL
+        "data_out/old_data_in_16" BEL "data_out/old_data_in_15" BEL
+        "data_out/old_data_in_14" BEL "data_out/old_data_in_13" BEL
+        "data_out/old_data_in_12" BEL "data_out/old_data_in_11" BEL
+        "data_out/old_data_in_10" BEL "data_out/old_data_in_9" BEL
+        "data_out/old_data_in_8" BEL "data_out/old_data_in_7" BEL
+        "data_out/old_data_in_6" BEL "data_out/old_data_in_5" BEL
+        "data_out/old_data_in_4" BEL "data_out/old_data_in_3" BEL
+        "data_out/old_data_in_2" BEL "data_out/old_data_in_1" BEL
+        "data_out/old_data_in_0" BEL "data_out/pos_display_1" BEL
+        "data_out/pos_display_0" BEL "encrypt/i_5" BEL "encrypt/i_4" BEL
+        "encrypt/i_3" BEL "encrypt/i_2" BEL "encrypt/i_1" BEL "encrypt/i_0"
+        BEL "encrypt/T_3" BEL "encrypt/T_2" BEL "encrypt/T_1" BEL
+        "encrypt/T_0" BEL "encrypt/C_31" BEL "encrypt/C_30" BEL "encrypt/C_29"
+        BEL "encrypt/C_28" BEL "encrypt/C_27" BEL "encrypt/C_26" BEL
+        "encrypt/C_25" BEL "encrypt/C_24" BEL "encrypt/C_23" BEL
+        "encrypt/C_22" BEL "encrypt/C_21" BEL "encrypt/C_20" BEL
+        "encrypt/C_19" BEL "encrypt/C_18" BEL "encrypt/C_17" BEL
+        "encrypt/C_16" BEL "encrypt/C_15" BEL "encrypt/C_14" BEL
+        "encrypt/C_13" BEL "encrypt/C_12" BEL "encrypt/C_11" BEL
+        "encrypt/C_10" BEL "encrypt/C_9" BEL "encrypt/C_8" BEL "encrypt/C_7"
+        BEL "encrypt/C_6" BEL "encrypt/C_5" BEL "encrypt/C_4" BEL
+        "encrypt/C_3" BEL "encrypt/C_2" BEL "encrypt/C_1" BEL "encrypt/C_0"
+        BEL "encrypt/temp_31" BEL "encrypt/temp_30" BEL "encrypt/temp_29" BEL
+        "encrypt/temp_28" BEL "encrypt/temp_27" BEL "encrypt/temp_26" BEL
+        "encrypt/temp_25" BEL "encrypt/temp_24" BEL "encrypt/temp_23" BEL
+        "encrypt/temp_22" BEL "encrypt/temp_21" BEL "encrypt/temp_20" BEL
+        "encrypt/temp_19" BEL "encrypt/temp_18" BEL "encrypt/temp_17" BEL
+        "encrypt/temp_16" BEL "encrypt/temp_15" BEL "encrypt/temp_14" BEL
+        "encrypt/temp_13" BEL "encrypt/temp_12" BEL "encrypt/temp_11" BEL
+        "encrypt/temp_10" BEL "encrypt/temp_9" BEL "encrypt/temp_8" BEL
+        "encrypt/temp_7" BEL "encrypt/temp_6" BEL "encrypt/temp_5" BEL
+        "encrypt/temp_4" BEL "encrypt/temp_3" BEL "encrypt/temp_2" BEL
+        "encrypt/temp_1" BEL "encrypt/temp_0" BEL "encrypt/done" BEL
+        "decrypt/T_3" BEL "decrypt/T_2" BEL "decrypt/T_1" BEL "decrypt/T_0"
+        BEL "decrypt/i_5" BEL "decrypt/i_4" BEL "decrypt/i_3" BEL
+        "decrypt/i_2" BEL "decrypt/i_1" BEL "decrypt/i_0" BEL "decrypt/P_31"
+        BEL "decrypt/P_30" BEL "decrypt/P_29" BEL "decrypt/P_28" BEL
+        "decrypt/P_27" BEL "decrypt/P_26" BEL "decrypt/P_25" BEL
+        "decrypt/P_24" BEL "decrypt/P_23" BEL "decrypt/P_22" BEL
+        "decrypt/P_21" BEL "decrypt/P_20" BEL "decrypt/P_19" BEL
+        "decrypt/P_18" BEL "decrypt/P_17" BEL "decrypt/P_16" BEL
+        "decrypt/P_15" BEL "decrypt/P_14" BEL "decrypt/P_13" BEL
+        "decrypt/P_12" BEL "decrypt/P_11" BEL "decrypt/P_10" BEL "decrypt/P_9"
+        BEL "decrypt/P_8" BEL "decrypt/P_7" BEL "decrypt/P_6" BEL
+        "decrypt/P_5" BEL "decrypt/P_4" BEL "decrypt/P_3" BEL "decrypt/P_2"
+        BEL "decrypt/P_1" BEL "decrypt/P_0" BEL "decrypt/temp_31" BEL
+        "decrypt/temp_30" BEL "decrypt/temp_29" BEL "decrypt/temp_28" BEL
+        "decrypt/temp_27" BEL "decrypt/temp_26" BEL "decrypt/temp_25" BEL
+        "decrypt/temp_24" BEL "decrypt/temp_23" BEL "decrypt/temp_22" BEL
+        "decrypt/temp_21" BEL "decrypt/temp_20" BEL "decrypt/temp_19" BEL
+        "decrypt/temp_18" BEL "decrypt/temp_17" BEL "decrypt/temp_16" BEL
+        "decrypt/temp_15" BEL "decrypt/temp_14" BEL "decrypt/temp_13" BEL
+        "decrypt/temp_12" BEL "decrypt/temp_11" BEL "decrypt/temp_10" BEL
+        "decrypt/temp_9" BEL "decrypt/temp_8" BEL "decrypt/temp_7" BEL
+        "decrypt/temp_6" BEL "decrypt/temp_5" BEL "decrypt/temp_4" BEL
+        "decrypt/temp_3" BEL "decrypt/temp_2" BEL "decrypt/temp_1" BEL
+        "decrypt/temp_0" BEL "decrypt/done" BEL "debouncer5/button_deb" BEL
+        "debouncer5/oldbutton" BEL "debouncer4/button_deb" BEL
+        "debouncer4/oldbutton" BEL "debouncer3/button_deb" BEL
+        "debouncer3/oldbutton" BEL "debouncer2/button_deb" BEL
+        "debouncer2/oldbutton" BEL "debouncer1/button_deb" BEL
+        "debouncer1/oldbutton" BEL "system_state" BEL "clk_BUFGP/BUFG";
+TS_clk_pin = PERIOD TIMEGRP "clk_pin" 100 MHz HIGH 50%;
+SCHEMATIC END;
+

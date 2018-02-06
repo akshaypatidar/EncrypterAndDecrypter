@@ -35,6 +35,7 @@ entity Decrypter is
            K : in  STD_LOGIC_VECTOR (31 downto 0);
            C : in  STD_LOGIC_VECTOR (31 downto 0);
            P : out  STD_LOGIC_VECTOR (31 downto 0);
+			  done : out STD_LOGIC;
            reset : in  STD_LOGIC;
            enable : in  STD_LOGIC);
 end Decrypter;
@@ -65,6 +66,7 @@ begin
 			temp <= "00000000000000000000000000000000";
 			P <= "00000000000000000000000000000000";
 			i <= "000000";
+			done <= '0';
 			
 		elsif (clock'event and clock = '1' and enable = '1') then
 			if (i="000000") then
@@ -83,6 +85,7 @@ begin
 				T <= T + "1111";
 			elsif (i = N0+2) then
 				P <= temp;
+				done <= '1';
 				i <= i + "000001";
 			end if;
 		end if;
