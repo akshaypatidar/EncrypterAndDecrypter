@@ -1,0 +1,6 @@
+vhdl work "HalfAdder.vhd"
+vhdl work "FullAdder.vhd"
+vhdl work "Count.vhd"
+vhdl work "Encrypter.vhd"
+vhdl work "Decrypter.vhd"
+vhdl work "EncrypterAndDecrypter.vhd"

@@ -1,0 +1,6 @@
+work	"Count.vhd"
+work	"Decrypter.vhd"
+work	"Encrypter.vhd"
+work	"EncrypterAndDecrypter.vhd"
+work	"FullAdder.vhd"
+work	"HalfAdder.vhd"

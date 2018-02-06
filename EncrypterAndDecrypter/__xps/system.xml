@@ -1,0 +1,10 @@
+
+<EDKSYSTEM EDKVERSION="14.7" EDWVERSION="1.2" TIMESTAMP="Tue Feb  6 12:36:39 2018">
+
+  <SYSTEMINFO ARCH="spartan6" DEVICE="xc6slx45" PACKAGE="csg324" PART="xc6slx45csg324-3" SOURCE="/home/akshay/Xilinix/Lab3_Mysterious/EncrypterAndDecrypter/EncrypterAndDecrypter.xmp" SPEEDGRADE="-3"/>
+
+  <EXTERNALPORTS/>
+
+  <MODULES/>
+
+</EDKSYSTEM>
